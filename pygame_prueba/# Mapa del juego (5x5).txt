@@ -1,0 +1,42 @@
+# Mapa del juego (5x5)
+game_map = [['_', '_', '_', '_', '_'],
+            ['_', '_', '_', '_', '_'],
+            ['_', '_', '_', '_', '_'],
+            ['_', '_', '_', '_', '_'],
+            ['_', '_', '_', '_', '_']]
+
+# Posiciones iniciales
+AI_pos = [0, 0]           # IA en la esquina
+player_pos = [2, 2]       # Jugador en el centro
+
+# Función para mover la IA hacia el jugador
+def move_AI(pos_AI, pos_player):
+    if pos_AI[0] < pos_player[0]:
+        pos_AI[0] += 1  # Abajo
+    elif pos_AI[0] > pos_player[0]:
+        pos_AI[0] -= 1  # Arriba
+    elif pos_AI[1] < pos_player[1]:
+        pos_AI[1] += 1  # Derecha
+    elif pos_AI[1] > pos_player[1]:
+        pos_AI[1] -= 1  # Izquierda
+    return pos_AI
+
+# Bucle del juego
+while AI_pos != player_pos:
+    # Mover IA
+    AI_pos = move_AI(AI_pos, player_pos)
+
+    # Actualizar mapa
+    game_map[AI_pos[0]][AI_pos[1]] = 'I'
+    game_map[player_pos[0]][player_pos[1]] = 'J'
+
+    # Mostrar mapa
+    for row in game_map:
+        print(' '.join(row))
+    print("\n")
+
+    # Limpiar la posición anterior de la IA (sin borrar al jugador)
+    if AI_pos != player_pos:
+        game_map[AI_pos[0]][AI_pos[1]] = '_'
+
+print("The AI has reached the player!")

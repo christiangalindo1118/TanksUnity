@@ -1,0 +1,40 @@
+# Archivos de Unity que NO se deben subir a Git
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Cache del paquete de Unity
+[Pp]ackages/com.unity.package-manager/
+
+# Config local de usuario
+UserSettings/
+
+# Archivos del sistema
+.DS_Store
+*.swp
+*.tmp
+*.user
+*.suo
+*.db
+*.mdb
+*.pidb
+*.booproj
+*.svd
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd

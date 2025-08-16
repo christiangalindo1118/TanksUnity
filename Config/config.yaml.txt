@@ -1,0 +1,14 @@
+behaviors:
+  MyAgent:
+    trainer_type: ppo
+    max_steps: 5000
+    time_horizon: 64
+    summary_freq: 1000
+    network_settings:
+      normalize: false
+      hidden_units: 32
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
